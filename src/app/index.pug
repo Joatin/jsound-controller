@@ -1,0 +1,103 @@
+
+html
+    head
+        meta(charset="UTF-8")
+        title= JSound
+        style.
+            body {
+                cursor: none;
+                color: lightgray;
+                margin: 0;
+                height: 100vh;
+            }
+
+            /* default .loading styles, .loading should be invisible, opacity: 0, z-index: -1 */
+            .loading {
+                opacity: 0;
+                transition: opacity .8s ease-in-out;
+                position: fixed;
+                height: 100%;
+                width: 100%;
+                top: 0;
+                left: 0;
+                background: #000;
+                z-index: -1;
+            }
+
+            /* .loading screen is visible when app is not bootstraped yet, .my-app is empty */
+            my-app:empty + .loading {
+                opacity: 1;
+                z-index: 100;
+            }
+
+            .spinner {
+                margin: 100px auto;
+                width: 40px;
+                height: 40px;
+                position: relative;
+                text-align: center;
+
+                -webkit-animation: sk-rotate 2.0s infinite linear;
+                animation: sk-rotate 2.0s infinite linear;
+            }
+
+            .dot1, .dot2 {
+                width: 60%;
+                height: 60%;
+                display: inline-block;
+                position: absolute;
+                top: 0;
+                background-color: white;
+                border-radius: 100%;
+
+                -webkit-animation: sk-bounce 2.0s infinite ease-in-out;
+                animation: sk-bounce 2.0s infinite ease-in-out;
+            }
+
+            .dot2 {
+                top: auto;
+                bottom: 0;
+                -webkit-animation-delay: -1.0s;
+                animation-delay: -1.0s;
+            }
+
+            @-webkit-keyframes sk-rotate {
+                100% {
+                    -webkit-transform: rotate(360deg)
+                }
+            }
+
+            @keyframes sk-rotate {
+                100% {
+                    transform: rotate(360deg);
+                    -webkit-transform: rotate(360deg)
+                }
+            }
+
+            @-webkit-keyframes sk-bounce {
+                0%, 100% {
+                    -webkit-transform: scale(0.0)
+                }
+                50% {
+                    -webkit-transform: scale(1.0)
+                }
+            }
+
+            @keyframes sk-bounce {
+                0%, 100% {
+                    transform: scale(0.0);
+                    -webkit-transform: scale(0.0);
+                }
+                50% {
+                    transform: scale(1.0);
+                    -webkit-transform: scale(1.0);
+                }
+            }
+body
+    my-app
+    div.loading
+        div.spinner
+            div.dot1
+            div.dot2
+
+

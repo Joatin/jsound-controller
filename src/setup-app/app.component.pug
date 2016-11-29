@@ -1,0 +1,116 @@
+style.
+    :host {
+        @apply(--layout-vertical);
+        @apply(--layout-flex);
+    }
+    neon-animated-pages {
+        @apply(--layout-flex);
+        @apply(--layout-vertical);
+    }
+    neon-animatable {
+        @apply(--layout-flex);
+        @apply(--layout-vertical);
+    }
+    .container {
+        @apply(--layout-flex);
+        @apply(--layout-vertical);
+    }
+    .horContainer {
+        @apply(--layout-horizontal);
+        @apply(--layout-center);
+    }
+    paper-toolbar {
+        background-color: transparent;
+    }
+    .spacer{
+        @apply(--layout-flex);
+    }
+    .smallbtn {
+        font-size: x-small;
+    }
+    h1 {
+        font-size: 300%;
+        text-align: center;
+    }
+    .inputArray {
+        @apply(--layout-horizontal);
+        @apply(--layout-flex);
+    }
+    .inputArray input {
+        width: 32px;
+        height: 64px;
+        margin: 4px;
+        border-radius:3px;
+        border: none;
+        text-shadow: 0 0 0 gray;
+        text-align: center;
+        font-size: x-large;
+    }
+    .inputArray input:focus {
+        outline: none;
+    }
+
+    .inputArray span {
+        width: 16px;
+    }
+    .infoContainer {
+        padding: 8px;
+        border-left: 5px solid lightgray;
+        border-radius: 2px;
+    }
+
+    .infoContainer span{
+        color: lightgray;
+    }
+
+    .infoContainerError {
+        padding: 8px;
+        border-left: 5px solid darkred;
+        border-radius: 2px;
+    }
+
+    .infoContainerError span {
+        color: darkred;
+    }
+    .aContainer {
+        @apply(--layout-vertical);
+    }
+neon-animated-pages([selected]="page", animate-initial-selection, entry-animation="fade-in-animation", exit-animation="fade-out-animation")
+    neon-animatable
+        div.container
+            div.spacer
+            div.horContainer
+                div.spacer
+                div
+                    h1 Welcome to setup
+                div.spacer
+            div.spacer
+    neon-animatable
+        div.container
+            div.spacer
+            div.horContainer
+                div.spacer
+                div
+                    h1 Enter sync code
+                    div.inputArray
+                        span.spacer
+                        input(#one, maxlength="1",(keyup)="two.focus()", [(ngModel)]="inputs[0]")
+                        input(#two, maxlength="1",(keyup)="three.focus()", [(ngModel)]="inputs[1]")
+                        input(#three, maxlength="1",(keyup)="four.focus()", [(ngModel)]="inputs[2]")
+                        span
+                        input(#four, maxlength="1",(keyup)="five.focus()", [(ngModel)]="inputs[3]")
+                        input(#five, maxlength="1",(keyup)="six.focus()", [(ngModel)]="inputs[4]")
+                        input(#six, maxlength="1",(keyup)="submit()", [(ngModel)]="inputs[5]")
+                        span.spacer
+                    br
+                    div.infoContainer
+                        span Here you enter the code you get when trying to add the controller on the server
+                    br
+                    div.infoContainerError(*ngIf="error")
+                        span {{error}}
+                div.spacer
+            div.spacer
+paper-toolbar
+    span.spacer
+    paper-button.smallbtn((click)="close()") close window
+    span.spacer

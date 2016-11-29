@@ -1,0 +1,53 @@
+{
+  "name": "jsound-controller",
+  "version": "1.0.0-alpha.0",
+  "description": "The controller app for jsound",
+  "main": "dist/index.js",
+  "author": "Joatin Granlund",
+  "license": "MIT",
+  "repository": "https://github.com/Joatin/jsound-controller/",
+  "scripts": {
+    "build": "webpack --config webpack.config.js && webpack --config webpack.config.angular.js && webpack --config webpack.config.setup.js",
+    "start": "electron ./dist/main/main.js"
+  },
+  "bin": {
+    "electron": "./node_modules/.bin/electron"
+  },
+  "devDependencies": {
+    "@types/core-js": "^0.9.34",
+    "@types/node": "^6.0.46",
+    "angular2-template-loader": "^0.6.0",
+    "bower-webpack-plugin": "^0.1.9",
+    "copy-webpack-plugin": "^4.0.0",
+    "electron": "^1.4.4",
+    "express": "^4.14.0",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "gulp": "^3.9.1",
+    "html-loader": "^0.4.4",
+    "html-webpack-plugin": "^2.24.1",
+    "pug": "^2.0.0-beta3",
+    "pug-loader": "^2.3.0",
+    "ts-loader": "^0.9.5",
+    "typescript": "^2.0.6",
+    "typings": "^1.5.0",
+    "webpack": "^1.13.3",
+    "webpack-dev-middleware": "^1.8.4",
+    "webpack-hot-middleware": "^2.13.1",
+    "webpack-target-electron-renderer": "^0.4.0"
+  },
+  "dependencies": {
+    "@angular/common": "^2.1.2",
+    "@angular/compiler": "^2.1.2",
+    "@angular/core": "^2.1.2",
+    "@angular/http": "^2.1.2",
+    "@angular/platform-browser": "^2.1.2",
+    "@angular/platform-browser-dynamic": "^2.1.2",
+    "@angular/router": "^3.1.2",
+    "@vaadin/angular2-polymer": "^1.0.0-beta5",
+    "es6-shim": "^0.35.1",
+    "reflect-metadata": "^0.1.8",
+    "rxjs": "^5.0.0-rc.1",
+    "socketcluster-client": "^5.0.15",
+    "zone.js": "^0.6.26"
+  }
+}

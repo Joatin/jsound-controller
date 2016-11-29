@@ -1,0 +1,34 @@
+
+html
+    head
+        meta(charset="UTF-8")
+        title= JSound
+
+        link(rel="import", href="../../bower_components/paper-button/paper-button.html")
+        link(rel="import", href="../../bower_components/paper-toolbar/paper-toolbar.html")
+        link(rel="import", href="../../bower_components/neon-animation/neon-animated-pages.html")
+        link(rel="import", href="../../bower_components/neon-animation/neon-animatable.html")
+        link(rel="import", href="../../bower_components/neon-animation/web-animations.html")
+        link(rel="import", href="../../bower_components/neon-animation/neon-animations.html")
+
+        link(rel="import", href="../../bower_components/iron-flex-layout/iron-flex-layout.html")
+        link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Roboto")
+        style(is="custom-style", include="iron-flex iron-flex-alignment")
+
+        style.
+            body {
+                margin: 0;
+                height: 100vh;
+                @apply(--layout-vertical);
+                color: white;
+                font-family: 'Roboto', sans-serif;
+                text-shadow: rgba(0,0,0,.01) 0 0 1px;
+            }
+            my-app{
+                margin: 0;
+                height: 100vh;
+                @apply(--layout-vertical);
+                @apply(--layout-flex);
+            }
+body
+    my-app

@@ -1,0 +1,22 @@
+{
+  "name": "jsound-controller",
+  "description": "The controller app for jsound",
+  "main": "dist/index.js",
+  "authors": [
+    "Joatin Granlund"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/Joatin/jsound-controller",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "paper-elements": "PolymerElements/paper-elements#^1.0.7",
+    "neon-elements": "PolymerElements/neon-elements#^1.0.0"
+  }
+}
